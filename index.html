@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanye Quotes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      #display-quote {
+        transition: all 0.5s linear;
+      }
+      #box {
+        min-height: 25%;
+      }
+
+      .animate {
+        animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+      }
+      @keyframes shake {
+        10%,
+        90% {
+          transform: translate3d(-1px, 0, 0);
+        }
+
+        20%,
+        80% {
+          transform: translate3d(2px, 0, 0);
+        }
+
+        30%,
+        50%,
+        70% {
+          transform: translate3d(-4px, 0, 0);
+        }
+
+        40%,
+        60% {
+          transform: translate3d(4px, 0, 0);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="flex flex-col justify-center items-center text-slate-50 bg-slate-900 h-screen w-screen"
+  >
+    <div
+      id="box"
+      class="flex justify-center items-center w-3/4 sm:w-1/4 drop-shadow-lg rounded-md border-slate-300 border-2 px-3 py-1"
+    >
+      <span
+        id="display-quote"
+        class="text-xl w-11/12 text-slate-200 mx-auto block align-middle text-center font-semibold"
+        >Click Next To Generate Quotes</span
+      >
+    </div>
+    <button
+      id="button-click"
+      onclick="getQuotes()"
+      class="block border px-3 my-5 font-semibold drop-shadow-2xl rounded-sm"
+    >
+      Next
+    </button>
+    <script src="js/kanye.js"></script>
+  </body>
+</html>
